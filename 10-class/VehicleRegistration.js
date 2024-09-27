@@ -38,6 +38,18 @@ var VehicleRegistration = /** @class */ (function () {
             }
         }
     };
+    VehicleRegistration.prototype.getCars = function () {
+        return this.vehicles.filter(function (vehicle) { return vehicle.getType() == 'Auto'; })
+            .map(function (vehicle) { return ("".concat(vehicle.getBrand(), ", ").concat(vehicle.getModel(), ", ").concat(vehicle.getYear())); });
+    };
+    VehicleRegistration.prototype.getMotorbikes = function () {
+        return this.vehicles.filter(function (vehicle) { return vehicle.getType() == 'Moto'; })
+            .map(function (vehicle) { return ("".concat(vehicle.getBrand(), ", ").concat(vehicle.getModel(), ", ").concat(vehicle.getYear())); });
+    };
+    VehicleRegistration.prototype.getTrucks = function () {
+        return this.vehicles.filter(function (vehicle) { return vehicle.getType() === 'Camion'; })
+            .map(function (vehicle) { return ("".concat(vehicle.getBrand(), ", ").concat(vehicle.getModel(), ", ").concat(vehicle.getYear())); });
+    };
     VehicleRegistration.prototype.getVehicles = function () {
         return this.vehicles.map(function (vehicle) { return ("".concat(vehicle.getType(), ", ").concat(vehicle.getBrand(), ", ").concat(vehicle.getModel(), ", ").concat(vehicle.getYear())); });
     };

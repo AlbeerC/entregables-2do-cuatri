@@ -5,6 +5,7 @@ import VehicleRegistration from "./VehicleRegistration"
 // Clase VehicleRegistration: Acá se irán registrando los vehículos, con la posibilidad de agregar nuevos y eliminar o modificar existentes
 
 let car1: Vehicle = new Vehicle("Auto", "Peugeout", "208", 2023)
+let car2: Vehicle = new Vehicle("Auto", "Fiat", "Cronos", 2024)
 let motorcycle1: Vehicle = new Vehicle("Moto", "Honda", "CBR600", 2022)
 let truck1: Vehicle = new Vehicle("Camion", "Scania", "G340", 2013)
 
@@ -18,6 +19,7 @@ let registration: VehicleRegistration = new VehicleRegistration()
 
 // Se agregan vehículos a la lista de registro
 registration.addVehicle(car1)
+registration.addVehicle(car2)
 registration.addVehicle(motorcycle1)
 registration.addVehicle(truck1)
 // Se obtiene la lista de vehículos registrados
@@ -30,3 +32,7 @@ registration.modifyVehicle(motorcycle1, "year", 2023)
 registration.modifyVehicle(motorcycle1, "brand", "Yamaha")
 registration.modifyVehicle(motorcycle1, "model", "MT-03")
 console.log(registration.getVehicles())
+// Se obtienen los vehículos de un tipo determinado
+console.log(registration.getCars())
+console.log(registration.getMotorbikes())
+console.log(registration.getTrucks())

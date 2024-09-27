@@ -45,6 +45,27 @@ class VehicleRegistration {
         }
     }
 
+    getCars(): string[] {
+        return this.vehicles.filter(vehicle => vehicle.getType() == 'Auto')
+            .map(vehicle => (
+                `${vehicle.getBrand()}, ${vehicle.getModel()}, ${vehicle.getYear()}`)
+            )
+    }
+
+    getMotorbikes(): string[] {
+        return this.vehicles.filter(vehicle => vehicle.getType() == 'Moto')
+            .map(vehicle => (
+                `${vehicle.getBrand()}, ${vehicle.getModel()}, ${vehicle.getYear()}`)
+            )
+    }
+
+    getTrucks(): string[] {
+        return this.vehicles.filter(vehicle => vehicle.getType() === 'Camion')
+            .map(vehicle => (
+                `${vehicle.getBrand()}, ${vehicle.getModel()}, ${vehicle.getYear()}`)
+            )   
+    }
+
     getVehicles(): string[] {
         return this.vehicles.map(vehicle => (
             `${vehicle.getType()}, ${vehicle.getBrand()}, ${vehicle.getModel()}, ${vehicle.getYear()}`)

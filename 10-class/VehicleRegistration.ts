@@ -11,19 +11,20 @@ class VehicleRegistration {
         this.vehicles = []
     }
 
-    addVehicle(vehicle: Vehicle): void {
+    addVehicle(type: string, brand: string, model: string, year: number, id: number): void {
+        let vehicle = new Vehicle(type, brand, model, year, id)
         this.vehicles.push(vehicle)
     }
 
-    deleteVehicle(vehicle: Vehicle): void {
-        const index = this.vehicles.indexOf(vehicle)
+    deleteVehicle(id: number): void {
+        const index = this.vehicles.findIndex(vehicle => vehicle.id === id)
         if (index > -1) {
             this.vehicles.splice(index, 1)
         }
     }
  
-    modifyVehicle(vehicle: Vehicle, property: string, value: any) {
-        const index = this.vehicles.indexOf(vehicle)
+    modifyVehicle(id: number, property: string, value: any) {
+        const index = this.vehicles.findIndex(vehicle => vehicle.id === id)
         if (index > -1) {
             switch (property) {
                 case 'type':

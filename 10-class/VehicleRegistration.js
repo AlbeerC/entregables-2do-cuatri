@@ -3,21 +3,23 @@
 // Agregar vehículo get y set, modificar un vehículo, dar de baja
 // Incorporar los conceptos composición y encapsulamiento
 Object.defineProperty(exports, "__esModule", { value: true });
+var Vehicle_1 = require("./Vehicle");
 var VehicleRegistration = /** @class */ (function () {
     function VehicleRegistration() {
         this.vehicles = [];
     }
-    VehicleRegistration.prototype.addVehicle = function (vehicle) {
+    VehicleRegistration.prototype.addVehicle = function (type, brand, model, year, id) {
+        var vehicle = new Vehicle_1.default(type, brand, model, year, id);
         this.vehicles.push(vehicle);
     };
-    VehicleRegistration.prototype.deleteVehicle = function (vehicle) {
-        var index = this.vehicles.indexOf(vehicle);
+    VehicleRegistration.prototype.deleteVehicle = function (id) {
+        var index = this.vehicles.findIndex(function (vehicle) { return vehicle.id === id; });
         if (index > -1) {
             this.vehicles.splice(index, 1);
         }
     };
-    VehicleRegistration.prototype.modifyVehicle = function (vehicle, property, value) {
-        var index = this.vehicles.indexOf(vehicle);
+    VehicleRegistration.prototype.modifyVehicle = function (id, property, value) {
+        var index = this.vehicles.findIndex(function (vehicle) { return vehicle.id === id; });
         if (index > -1) {
             switch (property) {
                 case 'type':

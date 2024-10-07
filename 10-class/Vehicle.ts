@@ -8,12 +8,14 @@ class Vehicle {
     private brand: string
     private model: string
     private year: number
+    public id: number
     
-    constructor(type: string, brand: string, model: string, year: number) {
+    constructor(type: string, brand: string, model: string, year: number, id: number) {
         this.type = type
         this.brand = brand
         this.model = model
         this.year = year
+        this.id = id
     }
 
     getType(): string {

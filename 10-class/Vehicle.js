@@ -4,11 +4,12 @@
 // Incorporar los conceptos composición y encapsulamiento
 Object.defineProperty(exports, "__esModule", { value: true });
 var Vehicle = /** @class */ (function () {
-    function Vehicle(type, brand, model, year) {
+    function Vehicle(type, brand, model, year, id) {
         this.type = type;
         this.brand = brand;
         this.model = model;
         this.year = year;
+        this.id = id;
     }
     Vehicle.prototype.getType = function () {
         return this.type;
